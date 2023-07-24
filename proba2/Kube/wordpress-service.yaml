@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress-service
+spec:
+  selector:
+    app: wordpress
+  ports:
+    - port: 8080
+      targetPort: 8080 # Itt adod meg a NodePort értékét
+      nodePort: 30000
+  type: NodePort
